@@ -29,9 +29,9 @@ public class SubscriptionController {
                           @RequestParam(value = "email", required = true) String email,
                           @RequestParam(value = "receive", required = true) String receive,
                           HttpServletRequest request) {
-        if (email != null && !email.equals(""))  {
+        if (email != null && !email.equals("")) {
             int rowsUpdated = updateSubscription(email, request.getRemoteAddr(), id, receive);
-            System.out.println(rowsUpdated + "rows updated for " + email + " and aaid: " + id);
+            System.out.println(rowsUpdated + " rows updated for " + email + " and aaid: " + id);
         }
         return "confirmed";
     }
